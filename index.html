@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+
+    background:linear-gradient(#265D85,#C7D7E4);
+}
+
+h1{
+
+    color:#0B2336;
+
+    font-size:80px;
+
+    font-family:Georgia;
+
+    text-align:center;
+
+}
+
+p{
+   
+    color:#0B2336;
+    
+    font-size:30px;
+
+    font-family:Georgia;
+
+    text-align:center;
+}
+
+.marco{
+
+    width:400px;
+
+    margin:100px auto;
+
+    padding:40px;
+
+    border:3px solid #5B7C99;
+
+    border-radius:20px;
+
+    background-color:#E6EEF4;
+
+    box-shadow:0px 8px 18px rgba(0,0,0,0.10);
+
+}
+
+.contenedor{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+.foto{
+
+    width:300px;
+
+    background-color:white;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    box-shadow:0px 10px 25px rgba(0,0,0,0.18);
+
+}
+
+.foto1{
+
+    width:300px;
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    box-shadow:0px 10px 25px rgba(0,0,0,0.18);
+
+    transform: translateX(80px) rotate(-8deg);
+
+}
+
+.foto2{
+
+    width:300px;
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    box-shadow:0px 10px 25px rgba(0,0,0,0.18);
+
+    transform: translateX(-80px) rotate(8deg);
+
+}
+
+h2{
+
+    color:#135485;
+
+    font-size:30px;
+
+    text-align:center;
+
+    font-family:Georgia;
+
+}
+
+.boton{
+
+    display:block;
+
+    width:250px;
+
+    margin:18px auto;
+
+    padding:15px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-family:Georgia;
+
+    font-size:28px;
+
+    color:#284B63;
+
+    background-color:#DDEAF3;
+
+    border:2px solid #5B7C99;
+
+    border-radius:15px;
+
+    transition:0.3s;
+
+}
+
+#girar{
+
+    display:none;
+
+}
+
+@media screen and (orientation:portrait){
+
+    #girar{
+
+        display:block;
+
+        position:fixed;
+
+        top:0;
+
+        left:0;
+
+        width:100%;
+
+        height:100%;
+
+        background:#CCD9E3;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        flex-direction:column;
+
+        text-align:center;
+
+        z-index:9999;
+
+    }
+
+}
+
+</style>
+   
+     <title> Regalito </title>
+</head>
+
+<body>
+
+<div id="girar">
+
+    <h2> 🏛️ Bienvenido al museo🏛️ </h2>
+
+    <p>
+    Para disfrutar mejor, coloca en horizontal 🔄.
+    </p>
+
+</div>
+
+<h1> EL RINCÓN DE... </h1>
+
+<p> No hice este lugar porque conozca todas las historias, lo hice porque conozco a alguien que las ama ^w^ </p>
+
+<hr>
+
+<div class="contenedor">
+
+    <img src="FoquitaOjona.png" class="foto1">
+
+    <div class="marco">
+
+        <h2>SALAS DE EXPOSICIÓN</h2>
+
+        <a href="anime.html" class="boton">
+        🌸 Anime 🌸
+        </a>
+
+        <a href="videojuegos.html" class="boton">
+        🎮 Videojuegos 🎮
+        </a>
+
+        <a href="series.html" class="boton">
+        📺 Series 📺
+        </a>
+
+        <a href="musica.html" class="boton">
+        🎵 Música 🎵
+        </a>
+
+    </div>
+
+    <img src="FocaAwa.png" class="foto2">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

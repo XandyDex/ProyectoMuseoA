@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Sala III - Series Animadas </title>
+
+<style>
+
+body{
+
+    background-image:url("Cine.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    font-family:Georgia;
+
+    margin:200px;
+    
+}
+
+h1{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:60px;
+
+    margin-top:40px;
+
+    text-shadow:0px 5px 15px black;
+
+    font-family:Impact;
+
+}
+
+.descripcion{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:40px;
+
+    margin-bottom:50px;
+
+}
+
+.carrusel{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+.lateral{
+
+    width:170px;
+
+    opacity:0.45;
+
+    transition:0.4s;
+
+}
+
+.principal{
+
+    width:250px;
+
+    border-radius:15px;
+
+    box-shadow:0px 15px 30px rgba(0,0,0,0.35);
+
+    transition: all 0.4s ease;
+
+}
+
+.info{
+
+    width:700px;
+
+    margin:10px auto;
+
+    background:rgba(20,20,20,0.75);
+
+    color:white;
+
+    padding:10px;
+
+    border-radius:40px;
+
+    text-align:center;
+
+    font-family:Impact;
+
+}
+
+h2{
+
+    font-size:50px;
+
+}
+
+.info p{
+
+    font-size:20px;
+
+    color:white;
+
+    font-family:Comic Sans MS;
+
+    line-height:1.7;
+
+}
+
+.botones{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+button{
+
+    font-size:35px;
+
+    padding:12px 30px;
+
+    margin:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>📺 Sala III — Series 📺</h1>
+
+<p class="descripcion">
+Un mini catálogo de las series que se que te gustan
+</p>
+
+<hr>
+
+<div class="carrusel">
+
+<img src="Solar.png" class="lateral" id="izquierda">
+
+<img src="South.png" class="principal" id="principal">
+
+<img src="Metal.png" class="lateral" id="derecha">
+
+</div>
+
+
+<div class="info">
+
+<h2 id="titulo">South Park</h2>
+
+<p id="texto">
+
+Aquí escribirás todo lo que quieras decirle sobre esta serie.
+
+</p>
+
+</div>
+
+<div class="botones">
+
+<button onclick="anterior()">⬅</button>
+
+<button onclick="siguiente()">➡</button>
+
+</div>
+
+<script>
+
+let numero = 0;
+
+const imagenes = [
+
+    "South.png",
+
+    "Metal.png",
+
+    "Alien.png",
+
+    "Eddsworld.png",
+
+    "Dhmis.png",
+
+    "InvaderZim.png",
+
+    "Hotel.png",
+
+    "Solar.png",
+];
+
+const titulos = [
+
+    "South Park",
+
+    "Metal Family",
+
+    "Alien Stage",
+
+    "Eddsworld",
+
+    "Dont Hug Me I'm Scared",
+
+    "Invader Zim",
+
+    "Haunted Hotel",
+
+    "Solar Opposites",
+
+];
+
+const textos = [
+
+    "Gracias a ti es que me eh querido ver South Park, imposible no relacionar la serie contigo :D, para mi, tu eres el fan nomber wan, cada personaje, cada meme, lo veo, y siempre mi mente regresa a ti (≧ヮ≦) 💕.",
+
+    "Conocía Metal Family, al inicio nunca la relacioné con nadie, pero en cuanto me enteré que a ti te gustaba, ahora eres tú quien aparece en mis pensamientos al ver algo relacionado a la serie ^w^",
+
+    "Nuevamente, ¿tengo que explicarlo? para mi tu creaste Alien Stage JAKSJKAJSKAJ, gracias a ti lo conocí, gracias a ti lo vi, es una serie que también tiene tu nombre en grandote cada que la recuerdo",
+
+    "A pesar de haberla visto, nunca me consideré totalmente fan del todo, pero yo se que tu si lo eres <3",
+
+    "Nuevamente creí que los fans estaban extintos, hasta que en secundaria descubrí que te gustaba al igual que a mi (me enamoras ^^)",
+
+    "Nunca la vi, y no recordaba su existencia hasta que un día me hablaste de que ya la estabas terminando, por lo que siempre se me quedó el recuerdo de que te gustaba",
+
+    "La descubrí gracias a que tu compartiste un edit de Abbadon, no la eh visto y no se nada de ella, solo se que a ti te gustó mucho :D",
+
+    "Solar Opposites es otra historia que lleva tu nombre en grandote, no sabía de su existencia hasta que vi como publicabas cosas de la serie y que ya la habías terminado de ver, era inevitable que se me quedara el recuerdo de cuanto te gustó la serie y la parejita principal (੭˃ᴗ˂)੭",
+
+
+];
+
+window.onload = function(){
+
+    document.getElementById("principal").src = imagenes[0];
+
+    document.getElementById("izquierda").src = imagenes[imagenes.length-1];
+
+    document.getElementById("derecha").src = imagenes[1];
+
+    document.getElementById("titulo").textContent = titulos[0];
+
+    document.getElementById("texto").textContent = textos[0];
+
+}
+
+function siguiente(){
+
+    let principal = document.getElementById("principal");
+
+    principal.style.opacity = "0";
+
+    setTimeout(function(){
+
+        numero++;
+
+        if(numero >= imagenes.length){
+
+            numero = 0;
+
+        }
+
+        let izquierda = numero - 1;
+
+let derecha = numero + 1;
+
+if(izquierda < 0){
+
+    izquierda = imagenes.length - 1;
+
+}
+
+if(derecha >= imagenes.length){
+
+    derecha = 0;
+
+}
+
+        principal.src = imagenes[numero];
+
+        document.getElementById("izquierda").src = imagenes[izquierda];
+
+        document.getElementById("derecha").src = imagenes[derecha];
+
+        document.getElementById("titulo").textContent = titulos[numero];
+
+        document.getElementById("texto").textContent = textos[numero];
+
+        principal.style.opacity = "1";
+
+    },250);
+
+}
+
+function anterior(){
+
+    let principal = document.getElementById("principal");
+
+    principal.style.opacity="0";
+
+    setTimeout(function(){
+
+        numero--;
+
+        if(numero < 0){
+
+            numero = imagenes.length-1;
+
+        }
+
+ let izquierda = numero - 1;
+
+let derecha = numero + 1;
+
+if(izquierda < 0){
+
+    izquierda = imagenes.length - 1;
+
+}
+
+if(derecha >= imagenes.length){
+
+    derecha = 0;
+
+}
+
+
+        principal.src = imagenes[numero];
+
+         document.getElementById("izquierda").src = imagenes[izquierda];
+
+        document.getElementById("derecha").src = imagenes[derecha];
+
+        document.getElementById("titulo").textContent = titulos[numero];
+
+        document.getElementById("texto").textContent = textos[numero];
+
+        principal.style.opacity="1";
+
+    },250);
+
+}
+
+</script>
+
+
+
+
+
+</body>
+
+
